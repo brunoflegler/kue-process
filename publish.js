@@ -15,11 +15,11 @@ const q = kue.createQueue({
 const jobs = () => {
   const job = q
     .create("work1", {
-      title: `Process ${new Date()}`
+      title: `Processes ${new Date()}`
     })
     .attempts(3) //numeros de tentativas
     .backoff({ delay: 60 * 1000, type: "fixed" }) //atrasar o envio das falhas
-    .priority(-10) //prioridade
+    .priority(-10) //prioridade high
     .removeOnComplete(true) //remove do redis quando completado
     .save();
 

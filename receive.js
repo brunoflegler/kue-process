@@ -8,8 +8,7 @@ const q = kue.createQueue({
   }
 });
 
-q.process("work1", (job, done) => {
+q.process("work1", 10, (job, done) => {
   console.log("title", job.data.title);
-
   done();
 });
