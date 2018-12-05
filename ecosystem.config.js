@@ -1,6 +1,6 @@
 module.exports = {
   apps: [
-    /* {
+    {
       name: "Publish",
       script: "./srv/publish.js",
       args: "",
@@ -17,7 +17,7 @@ module.exports = {
       env_production: {
         NODE_ENV: "production"
       }
-    }, */
+    },
     {
       name: "Receive",
       script: "./srv/receive.js",
@@ -28,6 +28,7 @@ module.exports = {
       watch: true,
       ignore_watch: ["node_modules"],
       max_memory_restart: "1G",
+      error_file: "~/data/app/node/err.log",
       env: {
         NODE_ENV: "development"
       },
@@ -51,7 +52,6 @@ module.exports = {
           port: "9922"
         }
       ],
-      port: ["9922"],
       ref: "origin/master",
       repo: "https://github.com/brunoflegler/kue-process.git",
       path: "~/data/app/node",
