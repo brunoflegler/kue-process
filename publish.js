@@ -23,6 +23,10 @@ const jobs = () => {
     .removeOnComplete(true) //remove do redis quando completado
     .save();
 
+  job.on("failed", function(errorMessage) {
+    console.log("Job failed");
+  });
+
   setTimeout(jobs, 500);
 };
 

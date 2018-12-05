@@ -25,7 +25,7 @@ module.exports = {
       instances: 2,
       exec_mode: "cluster",
       autorestart: true,
-      watch: false,
+      watch: true,
       ignore_watch: ["node_modules"],
       max_memory_restart: "1G",
       env: {
