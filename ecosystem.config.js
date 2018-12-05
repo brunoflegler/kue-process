@@ -1,6 +1,6 @@
 module.exports = {
   apps: [
-    {
+    /* {
       name: "Publish",
       script: "./srv/publish.js",
       args: "",
@@ -17,7 +17,7 @@ module.exports = {
       env_production: {
         NODE_ENV: "production"
       }
-    },
+    }, */
     {
       name: "Receive",
       script: "./srv/receive.js",
@@ -69,7 +69,7 @@ module.exports = {
       // pre-deploy action
       //"pre-deploy-local": "echo 'This is a local executed command'",
       // post-deploy action
-      "post-deploy": "npm install"
+      "post-deploy": "yarn install"
     }
   }
 };
