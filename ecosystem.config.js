@@ -2,7 +2,7 @@ module.exports = {
   apps: [
     {
       name: "Publish",
-      script: "publish.js",
+      script: "./srv/publish.js",
       args: "",
       instances: 2,
       exec_mode: "cluster",
@@ -20,7 +20,7 @@ module.exports = {
     },
     {
       name: "Receive",
-      script: "receive.js",
+      script: "./srv/receive.js",
       args: "",
       instances: 2,
       exec_mode: "cluster",
@@ -38,12 +38,37 @@ module.exports = {
   ],
 
   deploy: {
+    // "production" is the environment name
     production: {
-      user: "node",
-      host: "212.83.163.1",
+      // SSH key path, default to $HOME/.ssh
+      key: "D:/ssh-ppk/admin_srv-geor00-dgm.pem",
+      // SSH user
+      user: "admin",
+      // SSH host
+      host: [
+        {
+          host: "srv-geor00-dgm.el.com.br",
+          port: "9922"
+        }
+      ],
+      port: ["9922"],
+      // SSH options with no command-line flag, see 'man ssh'
+      // can be either a single string or an array of strings
+      //ssh_options: "StrictHostKeyChecking=no",
+      // GIT remote/branch
       ref: "origin/master",
-      repo: "git@github.com:repo.git",
-      path: "/var/www/production",
+      // GIT remote
+      repo: "https://github.com/brunoflegler/kue-process.git",
+      // path in the server
+      path: "~/data/app/node",
+      // Pre-setup command or path to a script on your local machine
+      //"pre-setup": "apt-get install git ; ls -la",
+      // Post-setup commands or path to a script on the host machine
+      // eg: placing configurations in the shared dir etc
+      //"post-setup": "ls -la",
+      // pre-deploy action
+      //"pre-deploy-local": "echo 'This is a local executed command'",
+      // post-deploy action
       "post-deploy":
         "npm install && pm2 reload ecosystem.config.js --env production"
     }
