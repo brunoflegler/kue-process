@@ -56,7 +56,7 @@ module.exports = {
       repo: "https://github.com/brunoflegler/kue-process.git",
       path: "~/data/app/node",
       "post-deploy":
-        "yarn install --production && pm2 startOrRestart ecosystem.json --env production"
+        "yarn install --production && pm2 startOrRestart ecosystem.config.json --env production"
     }
   }
 };
