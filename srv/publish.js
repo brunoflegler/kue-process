@@ -40,4 +40,4 @@ app.use("/api", kue.app);
 // Mount UI
 app.use("/kue", ui.app);
 
-app.listen(configServer.host, configServer.port);
+app.listen(configServer.port);
