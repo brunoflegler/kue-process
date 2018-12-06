@@ -17,7 +17,7 @@ const q = kue.createQueue({
 const jobs = () => {
   const job = q
     .create("work1", {
-      title: `Processes ${new Date()}`
+      title: `Processo atualizado deploy automatico}`
     })
     .attempts(3) //numeros de tentativas
     .backoff({ delay: 1 * 1000, type: "fixed" }) //atrasar o envio das falhas
