@@ -28,7 +28,6 @@ module.exports = {
       watch: true,
       ignore_watch: ["node_modules"],
       max_memory_restart: "1G",
-      error_file: "~/data/app/node/err.log",
       env: {
         NODE_ENV: "development"
       },
@@ -42,19 +41,24 @@ module.exports = {
     // "production" is the environment name
     production: {
       // SSH key path, default to $HOME/.ssh
-      key: "D:/ssh-ppk/admin_srv-geor00-dgm.pem",
+      //key: "D:/ssh-ppk/admin_srv-geor00-dgm.pem",
+      key: "D:/ssh-ppk/lenovo-linux.pem",
       // SSH user
-      user: "admin",
+      user: "bruno",
       // SSH host
       host: [
-        {
+        /* {
           host: "srv-geor00-dgm.el.com.br",
           port: "9922"
+        } */
+        {
+          host: "192.168.0.110",
+          port: "22"
         }
       ],
       ref: "origin/master",
       repo: "https://github.com/brunoflegler/kue-process.git",
-      path: "~/data/app/node",
+      path: "~/Developer/deploys",
       "post-deploy":
         "yarn install --production && pm2 startOrRestart ecosystem.config.json --env production"
     }
