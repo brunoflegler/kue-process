@@ -3,10 +3,9 @@ module.exports = {
     {
       name: "Publish",
       script: "./srv/publish.js",
-      instances: 2,
+      instances: 0,
       exec_mode: "cluster",
       autorestart: true,
-      merge_logs: true,
       watch: false,
       ignore_watch: ["node_modules"],
       max_memory_restart: "1G",
@@ -20,8 +19,8 @@ module.exports = {
         PORT: 4000,
         NODE_ENV: "production"
       }
-    },
-    {
+    }
+    /* {
       name: "Receive",
       script: "./srv/receive.js",
       instances: 2,
@@ -38,7 +37,7 @@ module.exports = {
       env_production: {
         NODE_ENV: "production"
       }
-    }
+    } */
   ],
 
   deploy: {
