@@ -3,7 +3,7 @@ module.exports = {
     {
       name: "Publish",
       script: "./srv/publish.js",
-      instances: 1,
+      instances: 2,
       exec_mode: "cluster",
       autorestart: true,
       merge_logs: true,
@@ -24,7 +24,7 @@ module.exports = {
     {
       name: "Receive",
       script: "./srv/receive.js",
-      instances: 1,
+      instances: 2,
       exec_mode: "cluster",
       autorestart: true,
       watch: false,
