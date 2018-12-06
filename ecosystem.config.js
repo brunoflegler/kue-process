@@ -23,7 +23,7 @@ module.exports = {
     {
       name: "Receive",
       script: "./srv/receive.js",
-      instances: 0,
+      instances: 7,
       exec_mode: "cluster",
       autorestart: false,
       watch: false,
