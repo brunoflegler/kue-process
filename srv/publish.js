@@ -3,6 +3,7 @@ const express = require("express");
 const app = express();
 const ui = require("kue-ui");
 const configRedis = require("../config/redis");
+const configServer = require("../config/server");
 
 const q = kue.createQueue({
   prefix: "q",
@@ -39,4 +40,4 @@ app.use("/api", kue.app);
 // Mount UI
 app.use("/kue", ui.app);
 
-app.listen(22);
+app.listen(configServer.host, configServer.port);
