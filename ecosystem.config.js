@@ -3,9 +3,9 @@ module.exports = {
     {
       name: "Publish",
       script: "./srv/publish.js",
-      instances: 2,
+      instances: 1,
       exec_mode: "cluster",
-      autorestart: true,
+      autorestart: false,
       watch: false,
       ignore_watch: ["node_modules"],
       max_memory_restart: "1G",
@@ -23,9 +23,9 @@ module.exports = {
     {
       name: "Receive",
       script: "./srv/receive.js",
-      instances: 2,
+      instances: 0,
       exec_mode: "cluster",
-      autorestart: true,
+      autorestart: false,
       watch: false,
       ignore_watch: ["node_modules"],
       max_memory_restart: "1G",
