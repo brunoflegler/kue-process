@@ -59,7 +59,7 @@ module.exports = {
       //path: "~/Developer/deploys",
       path: "~/data/app/node",
       "post-deploy":
-        "yarn install && pm2 startOrRestart ecosystem.config.js --env production"
+        "yarn install && pm2 startOrReload ecosystem.config.js --env production"
     }
   }
 };
