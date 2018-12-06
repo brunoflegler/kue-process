@@ -10,6 +10,8 @@ module.exports = {
       watch: false,
       ignore_watch: ["node_modules"],
       max_memory_restart: "1G",
+      error_file: "~/data/app/node/logs/receive.err.log",
+      out_file: "~/data/app/node/logs/receive.out.log",
       env: {
         PORT: 3000,
         NODE_ENV: "development"
@@ -28,6 +30,8 @@ module.exports = {
       watch: false,
       ignore_watch: ["node_modules"],
       max_memory_restart: "1G",
+      error_file: "~/data/app/node/logs/receive.err.log",
+      out_file: "~/data/app/node/logs/receive.out.log",
       env: {
         NODE_ENV: "development"
       },
@@ -54,7 +58,6 @@ module.exports = {
       ref: "origin/master",
       repo: "https://github.com/brunoflegler/kue-process.git",
       //path: "~/Developer/deploys",
-      "pre-setup": "/usr/local/bin/bash",
       path: "~/data/app/node",
       "post-deploy":
         "yarn install && pm2 startOrRestart ecosystem.config.js --env production"
