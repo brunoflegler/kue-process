@@ -39,4 +39,4 @@ app.use("/api", kue.app);
 // Mount UI
 app.use("/kue", ui.app);
 
-app.listen(3000);
+app.listen(22);
