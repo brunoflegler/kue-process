@@ -3,7 +3,7 @@ module.exports = {
     {
       name: "Publish",
       script: "./srv/publish.js",
-      instances: 0,
+      instances: 2,
       exec_mode: "cluster",
       autorestart: true,
       watch: false,
@@ -20,7 +20,7 @@ module.exports = {
         NODE_ENV: "production"
       }
     }
-    /* {
+    {
       name: "Receive",
       script: "./srv/receive.js",
       instances: 2,
@@ -37,7 +37,7 @@ module.exports = {
       env_production: {
         NODE_ENV: "production"
       }
-    } */
+    }
   ],
 
   deploy: {
@@ -59,7 +59,7 @@ module.exports = {
       //path: "~/Developer/deploys",
       path: "~/data/app/node",
       "post-deploy":
-        "yarn install && pm2 startOrReload ecosystem.config.js --env production"
+        "yarn install && pm2 reload ecosystem.config.js --env production"
     }
   }
 };
