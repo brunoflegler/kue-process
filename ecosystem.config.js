@@ -8,7 +8,7 @@ module.exports = {
       exec_mode: "cluster",
       autorestart: true,
       merge_logs: true,
-      watch: true,
+      watch: false,
       ignore_watch: ["node_modules"],
       max_memory_restart: "1G",
       env: {
@@ -25,7 +25,7 @@ module.exports = {
       instances: 1,
       exec_mode: "cluster",
       autorestart: true,
-      watch: true,
+      watch: false,
       ignore_watch: ["node_modules"],
       max_memory_restart: "1G",
       env: {
