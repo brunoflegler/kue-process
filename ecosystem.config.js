@@ -19,7 +19,7 @@ module.exports = {
         PORT: 4000,
         NODE_ENV: "production"
       }
-    }
+    },
     {
       name: "Receive",
       script: "./srv/receive.js",
